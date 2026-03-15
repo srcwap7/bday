@@ -1,0 +1,53 @@
+name:
+  - shruti
+  
+cuisine_liked:
+  - chinese
+
+keywords:
+  - dish: noodles
+    cuisine: chinese
+  - dish: momos
+    cuisine: chinese
+  - dish: manchurian
+    cuisine: chinese
+  - dish: fried rice
+    cuisine: chinese
+  - dish: soups
+    cuisine: soups
+  - dish: pizza
+    cuisine: italian
+  - dish: pastas
+    cuisine: italian
+  - dish: gobi
+    cuisine: indian
+  - dish: biryani
+    cuisine: indian
+  - dish: mushroom
+    cuisine: indian
+  - dish: paneer
+    cuisine: indian
+  - dish: bhurji
+    cuisine: indian
+  - dish: chaap
+    cuisine: indian
+  - dish: chhole kulche
+    cuisine: indian
+  - dish: chhola bhatura
+    cuisine: indian
+  - dish: alu puri
+    cuisine: indian
+  - dish: sweet
+    cuisine: dessert
+  - dish: dessert
+    cuisine: dessert 
+  - dish: sweet dish
+    cuisine: sweet dish
+
+filter:
+  - name: min_rating
+    value: 4
+  - name: min_votes
+    value: 100
+  - name: is_veg
+    value: true
