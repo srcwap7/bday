@@ -405,9 +405,7 @@ function ExploreSection({ onSelect, visible }) {
       transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(.34,1.56,.64,1)",
       padding: "0 20px 100px", maxWidth: 680, margin: "0 auto",
     }}>
-      {/* ── Select Address banner — sits at the very top of explore ── */}
-      <SelectAddressBanner visible={visible} />
-
+      
       <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "0 0 28px" }}>
         <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg,transparent,rgba(255,217,61,0.4))" }} />
         <span style={{ fontFamily: "'Pacifico',cursive", fontSize: "1.4rem", color: "#FFD93D", textShadow: "0 0 20px rgba(255,217,61,0.5)" }}>Explore Variants</span>
