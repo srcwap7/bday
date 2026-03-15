@@ -13,6 +13,7 @@ import {
   selectItemQuantity,
   selectCartTotalUnits,
 } from "./redux_utils/cartSlice";
+import { apiFetch } from "./api";
 
 // ── Food state selectors ──────────────────────────────────────────
 const selectDishesMap      = (s) => s.food.dishes;
@@ -24,9 +25,8 @@ const selectBindings       = (s) => s.food.bindings;
 // Optimistic: caller has already updated Redux before calling this.
 async function callUpdateCart({ dish_id, dish_name, res_name, res_id, dish_image,action }) {
   try {
-    const res = await fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/updateCart", {
+    const res = await apiFetch("/updateCart", {
       method:      "POST",
-      credentials: "include",
       headers:     { "Content-Type": "application/json" },
       body:        JSON.stringify({ dish_id, dish_name, res_name, res_id, dish_image,action }),
     });

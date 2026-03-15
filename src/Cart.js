@@ -12,6 +12,7 @@ import {
   dropFromCart,
   clearCart,
 } from "./redux_utils/cartSlice";
+import { apiFetch } from "./api"
 
 const selectDishes      = (state) => state.food.dishes;
 const selectRestaurants = (state) => state.food.restaurants;
@@ -20,9 +21,8 @@ const selectRestaurants = (state) => state.food.restaurants;
 // Optimistic: Redux is already updated before this fires.
 async function callUpdateCart({ dish_id, dish_name, res_name, res_id, dish_image,action }) {
   try {
-    const res = await fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/updateCart", {
+    const res = await apiFetch("/updateCart", {
       method:      "POST",
-      credentials: "include",
       headers:     { "Content-Type": "application/json" },
       body:        JSON.stringify({ dish_id, dish_name, res_name, res_id, dish_image,action}),
     });
@@ -43,9 +43,8 @@ async function placeOrder(cartItems) {
     quantity:   item.quantity,
   }));
 
-  const res = await fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/placeOrder", {
+  const res = await apiFetch("/placeOrder", {
     method:      "POST",
-    credentials: "include",
     headers:     { "Content-Type": "application/json" },
     body:        JSON.stringify({ res_id, items }),
   });

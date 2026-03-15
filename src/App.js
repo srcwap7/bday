@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectByCuisine, selectByDishKeyword } from "./redux_utils/foodSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { syncCartFromServer, selectCartTotalUnits } from "./redux_utils/cartSlice";
+import { apiFetch } from "./api";
 
 // ── Balloon colours ──────────────────────────────────────────────
 const BALLOON_COLORS = [
@@ -566,14 +567,13 @@ export default function BirthdayPage() {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/cart", { credentials: "include" })
-      .then(async res => {
-        if (res.ok) {
-          const data = await res.json();
-          if (data.success) dispatch(syncCartFromServer(data.cart));
-        }
-      })
-      .catch(err => console.log(err));
+
+    apiFetch("/cart").then(async res => {
+      if (res.ok) {
+        const data = await res.json();
+        if (data.success) dispatch(syncCartFromServer(data.cart));
+      }
+    }).catch(err => console.log(err));
 
     if (alreadySeen) return;
 
