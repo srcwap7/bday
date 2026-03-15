@@ -566,7 +566,7 @@ export default function BirthdayPage() {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    fetch("http://localhost:3009/cart", { credentials: "include" })
+    fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/cart", { credentials: "include" })
       .then(async res => {
         if (res.ok) {
           const data = await res.json();

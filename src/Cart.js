@@ -20,7 +20,7 @@ const selectRestaurants = (state) => state.food.restaurants;
 // Optimistic: Redux is already updated before this fires.
 async function callUpdateCart({ dish_id, dish_name, res_name, res_id, dish_image,action }) {
   try {
-    const res = await fetch("http://localhost:3009/updateCart", {
+    const res = await fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/updateCart", {
       method:      "POST",
       credentials: "include",
       headers:     { "Content-Type": "application/json" },
@@ -43,7 +43,7 @@ async function placeOrder(cartItems) {
     quantity:   item.quantity,
   }));
 
-  const res = await fetch("http://localhost:3009/placeOrder", {
+  const res = await fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/placeOrder", {
     method:      "POST",
     credentials: "include",
     headers:     { "Content-Type": "application/json" },

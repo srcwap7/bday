@@ -15,7 +15,7 @@ function useFoodPolling(interval = 12000) {
 
     const poll = async () => {
       try {
-        let url = "http://localhost:3009";
+        let url = "https://tonsorial-preppily-jamika.ngrok-free.dev";
 
         if (!restaurants || restaurants.length === 0) {
           url += "?sessionStart=true";

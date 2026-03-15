@@ -24,7 +24,7 @@ const selectBindings       = (s) => s.food.bindings;
 // Optimistic: caller has already updated Redux before calling this.
 async function callUpdateCart({ dish_id, dish_name, res_name, res_id, dish_image,action }) {
   try {
-    const res = await fetch("http://localhost:3009/updateCart", {
+    const res = await fetch("https://tonsorial-preppily-jamika.ngrok-free.dev/updateCart", {
       method:      "POST",
       credentials: "include",
       headers:     { "Content-Type": "application/json" },
